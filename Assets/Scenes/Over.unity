@@ -123,6 +123,23 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &529836281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3102672261571437901, guid: 4484f5229a01c0b4781ddd2f46f259eb, type: 3}
+  m_PrefabInstance: {fileID: 3102672261444033019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &529836282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529836281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e1bc231b2e0c740abf10833837ac58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LandingPad
       objectReference: {fileID: 0}
+    - target: {fileID: 626172005305215664, guid: 7be798c40043543489e89bf42412e6d2, type: 3}
+      propertyPath: m_TagString
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 4726685632087290726, guid: 7be798c40043543489e89bf42412e6d2, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -422,6 +443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 414727355, guid: 4484f5229a01c0b4781ddd2f46f259eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3102672261571437889, guid: 4484f5229a01c0b4781ddd2f46f259eb, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -483,6 +508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LaunchPad
       objectReference: {fileID: 0}
+    - target: {fileID: 3817359787000910264, guid: 0d3b5028847a4f2499f5b26ba0b3ee28, type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
     - target: {fileID: 4974795045257873112, guid: 0d3b5028847a4f2499f5b26ba0b3ee28, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -541,12 +570,20 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 260403350507258023, guid: a993e6ea7b308b3409c06a26152b2d85, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.3056817
+      objectReference: {fileID: 0}
+    - target: {fileID: 260403350507258023, guid: a993e6ea7b308b3409c06a26152b2d85, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.8691616
+      objectReference: {fileID: 0}
+    - target: {fileID: 260403350507258023, guid: a993e6ea7b308b3409c06a26152b2d85, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.93
+      value: -9.9377
       objectReference: {fileID: 0}
     - target: {fileID: 260403350507258023, guid: a993e6ea7b308b3409c06a26152b2d85, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1556
+      value: 3.479
       objectReference: {fileID: 0}
     - target: {fileID: 260403350507258023, guid: a993e6ea7b308b3409c06a26152b2d85, type: 3}
       propertyPath: m_LocalPosition.z
