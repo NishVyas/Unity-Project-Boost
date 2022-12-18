@@ -11,17 +11,39 @@ public class CollisionHandler : MonoBehaviour {
     AudioSource collisionAudioSource;
 
     bool isTransitioningLevel = false;
+    bool collisionDisabled = false;
 
-    void Start() {
+    void Start() 
+    {
         collisionAudioSource = GetComponent<AudioSource>();
     }
 
-    void OnCollisionEnter(Collision other) {
-        if (isTransitioningLevel) {
+    void Update() 
+    {
+        RespondToDebugKeys();
+    }
+
+    void RespondToDebugKeys() 
+    {
+        if (Input.GetKeyDown(KeyCode.L)) 
+        {
+            LoadNextLevel();
+        } 
+        else if (Input.GetKeyDown(KeyCode.C)) 
+        {
+            collisionDisabled = !collisionDisabled; // toggles collision
+        }
+    }
+
+    void OnCollisionEnter(Collision other) 
+    {
+        if (isTransitioningLevel || collisionDisabled) 
+        {
             return;
         }
 
-        switch (other.gameObject.tag) {
+        switch (other.gameObject.tag) 
+        {
             case "Friendly":
                 break;
             case "Finish":
@@ -33,7 +55,8 @@ public class CollisionHandler : MonoBehaviour {
         }
     }
 
-    void StartSuccessSequence() {
+    void StartSuccessSequence() 
+    {
         isTransitioningLevel = true;
         collisionAudioSource.Stop();
         collisionAudioSource.PlayOneShot(success);
@@ -42,18 +65,21 @@ public class CollisionHandler : MonoBehaviour {
         Invoke("LoadNextLevel", levelLoadDelay);
     }
 
-    void LoadNextLevel() {
+    void LoadNextLevel() 
+    {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
-        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings) {
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings) 
+        {
             nextSceneIndex = 0;
         }
 
         SceneManager.LoadScene(nextSceneIndex);
     }
 
-    void StartCrashSequence() {
+    void StartCrashSequence() 
+    {
         isTransitioningLevel = true;
         collisionAudioSource.Stop();
         collisionAudioSource.PlayOneShot(crashExplosion);
@@ -62,12 +88,14 @@ public class CollisionHandler : MonoBehaviour {
         Invoke("ReloadLevel", levelLoadDelay);
     }
 
-    void DisableRocketMovement() {
+    void DisableRocketMovement() 
+    {
         rocketMovement = GetComponent<Movement>();
         rocketMovement.enabled = false;
     }
 
-    void ReloadLevel() {
+    void ReloadLevel() 
+    {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
